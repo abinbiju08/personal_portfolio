@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abin B Yohannan - Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4b6cb7, #182848);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero {
+            background: url('hero-background.jpg') center/cover no-repeat;
+            color: white;
+            padding: 200px 20px;
+        }
+
+        .skills {
+            background: #f4f4f4;
+        }
+
+        .projects {
+            background: #fff;
+        }
+
+        .contact {
+            background: #182848;
+            color: white;
+        }
+
+        .card {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s;
+        }
+
+        .scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="Image channel.jpg" alt="Profile Picture" style="
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid white;
+            margin-bottom: 20px;">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I am Abin B Yohannan, a passionate frontend developer.</p>
+    </section>
+
+    <section id="about" class="scroll">
+        <h2>About Me</h2>
+        <p>I am a B.Tech graduate specializing in frontend development technologies. I am passionate about learning and
+            contributing to innovative projects.A highly motivated and detail-oriented B.Tech graduate in Computer Science and Engineering, with a strong
+            foundation in frontend development technologies. Passionate about ensuring software quality through effective testing, I am
+            eager to apply my skills in front-end development. As a fresher, I am committed to continuous learning and contributing to
+            innovative projects in a collaborative environment. Seeking an entry-level role to enhance my skills and grow in the field of
+            development.</p>
+    </section>
+
+    <section id="skills" class="skills scroll">
+        <h2>Skills</h2>
+        <div class="card">
+            <h3>Web Technologies</h3>
+            <p>HTML, CSS, Bootstrap, JavaScript</p>
+        </div>
+        <div class="card">
+            <h3>Programming</h3>
+            <p>Java, Python</p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects scroll">
+        <h2>Projects</h2>
+        <div class="card">
+            <h3>Postpartum Depression Detection</h3>
+            <p>Used Python and Django to develop a mental health diagnostic tool.</p>
+        </div>
+        <div class="card">
+            <h3>Personal Portfolio</h3>
+            <p>Created a responsive portfolio website using HTML and CSS.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact scroll">
+        <h2>Contact Me</h2>
+        <p>Email: abinbiju08@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/abin-b-yohannan-b823861bb" style="color: #4b6cb7;">LinkedIn
+                Profile</a></p>
+        <p>GitHub: <a href="https://github.com/abinbiju08" style="color: #4b6cb7;">GitHub Profile</a></p>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll('.scroll');
+        window.addEventListener('scroll', () => {
+            const triggerBottom = window.innerHeight * 0.8;
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
