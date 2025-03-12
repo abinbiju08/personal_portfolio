@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0073e6, #00c6ff);
+    color: white;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    color: #0073e6;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.box {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+}
+
+h2 {
+    text-align: center;
+    color: #0073e6;
+}
+
+.styled-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: justify;
+    color: #555;
+    background: #f0f8ff;
+    padding: 15px;
+    border-left: 5px solid #0073e6;
+    border-radius: 5px;
+}
+
+.content h3 {
+    color: #005bb5;
+}
+
+.content p {
+    color: #555;
+}
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0073e6;
+    color: white;
+    margin-top: 20px;
+}
