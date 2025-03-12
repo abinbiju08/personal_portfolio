@@ -4,169 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abin B Yohannan - Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background: linear-gradient(90deg, #4b6cb7, #182848);
-            color: white;
-            padding: 20px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .hero {
-            background: url('hero-background.jpg') center/cover no-repeat;
-            color: white;
-            padding: 200px 20px;
-        }
-
-        .skills {
-            background: #f4f4f4;
-        }
-
-        .projects {
-            background: #fff;
-        }
-
-        .contact {
-            background: #182848;
-            color: white;
-        }
-
-        .card {
-            display: inline-block;
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        .scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s;
-        }
-
-        .scroll.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <title>Abin B Yohannan | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <nav>
+            <h1>Abin B Yohannan</h1>
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <img src="Image channel.jpg" alt="Profile Picture" style="
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 3px solid white;
-            margin-bottom: 20px;">
-        <h1>Welcome to My Portfolio</h1>
-        <p>I am Abin B Yohannan, a passionate frontend developer.</p>
+    <section id="hero">
+        <h2>Hi, I'm Abin B Yohannan</h2>
+        <p>Frontend Developer | UI/UX Designer | Java Developer</p>
+        <a href="#projects" class="btn">View My Work</a>
     </section>
 
-    <section id="about" class="scroll">
+    <section id="about" class="box">
         <h2>About Me</h2>
-        <p>I am a B.Tech graduate specializing in frontend development technologies. I am passionate about learning and
-            contributing to innovative projects.A highly motivated and detail-oriented B.Tech graduate in Computer Science and Engineering, with a strong
-            foundation in frontend development technologies. Passionate about ensuring software quality through effective testing, I am
-            eager to apply my skills in front-end development. As a fresher, I am committed to continuous learning and contributing to
-            innovative projects in a collaborative environment. Seeking an entry-level role to enhance my skills and grow in the field of
-            development.</p>
+        <p class="styled-text">
+            Enthusiastic and detail-oriented professional with a B.Tech in Computer Science and Engineering,
+            equipped with technical and creative skills to contribute effectively to the healthcare supplies industry.
+            Seeking a position that allows me to leverage my expertise in frontend development, UI/UX design,
+            and data analysis to enhance user experiences and optimize digital solutions for healthcare products and
+            services.
+        </p>
     </section>
 
-    <section id="skills" class="skills scroll">
+    <section id="experience" class="box">
+        <h2>Experience</h2>
+        <div class="content">
+            <h3>Global Quest Technologies</h3>
+            <p><strong>Role:</strong> JAVA Full Stack Developer Intern</p>
+        </div>
+    </section>
+
+    <section id="skills" class="box">
         <h2>Skills</h2>
-        <div class="card">
-            <h3>Web Technologies</h3>
-            <p>HTML, CSS, Bootstrap, JavaScript</p>
-        </div>
-        <div class="card">
-            <h3>Programming</h3>
-            <p>Java, Python</p>
-        </div>
+        <ul>
+            <li><strong>Specialized Area:</strong> Computer Science</li>
+            <li><strong>MS Tools:</strong> Microsoft Excel</li>
+            <li><strong>Web Technologies:</strong> HTML, CSS, Bootstrap, JavaScript</li>
+            <li><strong>UI/UX Design Tools:</strong> Figma, Adobe XD</li>
+            <li><strong>Database:</strong> MongoDB</li>
+            <li><strong>Additional Tools:</strong> Adobe Photoshop, Video Editing Software</li>
+            <li><strong>Languages:</strong> Java</li>
+        </ul>
     </section>
 
-    <section id="projects" class="projects scroll">
+    <section id="projects" class="box">
         <h2>Projects</h2>
-        <div class="card">
-            <h3>Postpartum Depression Detection</h3>
-            <p>Used Python and Django to develop a mental health diagnostic tool.</p>
+        <div class="content">
+            <h3>Postpartum Depression Detection (June 2023)</h3>
+            <p>Developed a system using machine learning algorithms to detect postpartum depression, aiding early
+                diagnosis.</p>
+            <p><strong>Technologies Used:</strong> Python, Django</p>
         </div>
-        <div class="card">
-            <h3>Personal Portfolio</h3>
-            <p>Created a responsive portfolio website using HTML and CSS.</p>
+        <div class="content">
+            <h3>Personal Portfolio Website (August 2023)</h3>
+            <p>Developed a responsive personal portfolio website using HTML and CSS to showcase skills and projects.</p>
+            <p><strong>Technologies Used:</strong> HTML, CSS</p>
+        </div>
+        <div class="content">
+            <h3>UI/UX Design Prototype</h3>
+            <p>A modern design concept for a mobile application, created using Figma.</p>
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+                src="https://embed.figma.com/proto/YfeY8jFLJW7XzBehs3Nx1Y/Intern's-project?page-id=125%3A48009&node-id=818-3124&starting-point-node-id=818%3A3124&embed-host=share"
+                allowfullscreen></iframe>
         </div>
     </section>
 
-    <section id="contact" class="contact scroll">
+    <section id="certifications" class="box">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Java Full Stack Development at Global Quest Technologies</li>
+            <li>Software Testing Full Stack at Global Quest Technologies</li>
+        </ul>
+    </section>
+
+    <section id="achievements" class="box">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Managed a media team as the head, delivering innovative content for multiple events.</li>
+            <li>Completed a project integrating machine learning with natural language processing for a chatbot.</li>
+            <li>Contributed to digital product development for a healthcare-related tech company.</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="box">
         <h2>Contact Me</h2>
-        <p>Email: abinbiju08@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/abin-b-yohannan-b823861bb" style="color: #4b6cb7;">LinkedIn
-                Profile</a></p>
-        <p>GitHub: <a href="https://github.com/abinbiju08" style="color: #4b6cb7;">GitHub Profile</a></p>
+        <p><strong>Email:</strong> <a href="mailto:abinbiju08@gmail.com">abinbiju08@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+917736627886">+91 7736627886</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/abin-b-yohannan-b823861bb"
+                target="_blank">Connect with me</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/abinbiju08" target="_blank">View My Work</a></p>
     </section>
 
-    <script>
-        const sections = document.querySelectorAll('.scroll');
-        window.addEventListener('scroll', () => {
-            const triggerBottom = window.innerHeight * 0.8;
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < triggerBottom) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
-            });
-        });
-    </script>
+    <footer>
+        <p>&copy; 2025 Abin B Yohannan. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
