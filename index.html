@@ -1506,6 +1506,38 @@ footer span{color:var(--cyan)}
           <div><div class="pm-n"><span>90</span>%</div><div class="pm-l">Resolution Rate</div></div>
         </div>
       </div>
+      <div class="proj-card reveal d4" style="grid-column:1 / -1">
+        <div class="proj-glow"></div>
+        <div class="proj-num">PROJECT 03</div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:start">
+          <div>
+            <canvas id="jobsqCanvas" width="480" height="240" style="width:100%;border-radius:12px;margin-bottom:1.2rem;display:block"></canvas>
+          </div>
+          <div>
+            <div class="proj-name">JobsQ AI</div>
+            <div class="proj-desc">AI-powered full-stack job platform for India — real-time job scraping from Adzuna, Remotive & Jobicy, AI resume tailoring & ATS scoring, Face ID login, smart job matching, community chat with moderation, and an interactive job hotspot map.</div>
+            <div class="proj-tech">
+              <span class="p-tag">React</span>
+              <span class="p-tag">FastAPI</span>
+              <span class="p-tag">Python</span>
+              <span class="p-tag">Supabase</span>
+              <span class="p-tag">Groq AI</span>
+            </div>
+            <div class="proj-metrics">
+              <div><div class="pm-n"><span>50K</span>+</div><div class="pm-l">Jobs Scraped</div></div>
+              <div><div class="pm-n"><span>95</span>%</div><div class="pm-l">Match Accuracy</div></div>
+            </div>
+            <div style="display:flex;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap">
+              <a href="https://jobsq-ai.vercel.app" target="_blank" class="figma-btn" style="background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.4);color:#00D4FF">
+                ⇗ Live Demo
+              </a>
+              <a href="https://github.com/abinbiju08/jobsq-ai" target="_blank" class="figma-btn" style="background:rgba(0,102,255,0.1);border-color:rgba(0,102,255,0.4);color:var(--blue-light)">
+                ⫥ GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1719,4 +1751,82 @@ function openPortfolio() {
 
 
 </body>
+<script>
+(function(){
+  var c=document.getElementById("jobsqCanvas");
+  if(!c)return;
+  var ctx=c.getContext("2d"),W=480,H=240;
+  function rr(x,y,w,h,r,fill,stroke,sw){
+    ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+    ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+    ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+    if(fill){ctx.fillStyle=fill;ctx.fill()}
+    if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=sw||1.5;ctx.stroke()}
+  }
+  /* BG */
+  var bg=ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,"#0d1f3c");bg.addColorStop(1,"#061022");
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle="rgba(0,102,255,0.07)";ctx.lineWidth=1;
+  for(var x=0;x<W;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+  for(var y=0;y<H;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+  var g=ctx.createRadialGradient(240,0,0,240,0,220);
+  g.addColorStop(0,"rgba(0,102,255,0.2)");g.addColorStop(1,"rgba(0,102,255,0)");
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  /* NAV BAR */
+  rr(0,0,W,30,0,"rgba(2,8,24,0.9)");
+  ctx.fillStyle="#00D4FF";ctx.font="bold 9px monospace";ctx.fillText("JobsQ AI",14,20);
+  var navItems=["Dashboard","Jobs","Resume","Map"];
+  navItems.forEach(function(t,i){
+    ctx.fillStyle=i===0?"#00D4FF":"rgba(184,212,255,0.45)";
+    ctx.font="5.5px monospace";ctx.fillText(t,140+i*70,20);
+  });
+  var av=ctx.createLinearGradient(452,7,468,23);
+  av.addColorStop(0,"#0066FF");av.addColorStop(1,"#00D4FF");
+  ctx.beginPath();ctx.arc(460,15,8,0,Math.PI*2);ctx.fillStyle=av;ctx.fill();
+  ctx.fillStyle="#fff";ctx.font="bold 5px sans-serif";ctx.textAlign="center";ctx.fillText("AB",460,18);ctx.textAlign="left";
+  ctx.beginPath();ctx.arc(12,15,3,0,Math.PI*2);ctx.fillStyle="rgba(0,229,160,0.9)";ctx.fill();
+  ctx.strokeStyle="rgba(0,102,255,0.3)";ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,30);ctx.lineTo(W,30);ctx.stroke();
+  /* STATS ROW */
+  var stats=[["50K+","Jobs Indexed"],["95%","Match Accuracy"],["87","ATS Score"],["3","Sources Live"]];
+  stats.forEach(function(s,i){
+    var sx=i*(W/4);
+    ctx.fillStyle="rgba(0,20,60,0.5)";ctx.fillRect(sx,30,W/4,44);
+    ctx.strokeStyle="rgba(0,102,255,0.2)";ctx.lineWidth=1;
+    if(i>0){ctx.beginPath();ctx.moveTo(sx,30);ctx.lineTo(sx,74);ctx.stroke()}
+    ctx.fillStyle=i===2?"#00D4FF":"#ffffff";ctx.font="bold 13px monospace";ctx.textAlign="center";ctx.fillText(s[0],sx+W/8,52);
+    ctx.fillStyle="rgba(184,212,255,0.5)";ctx.font="5px monospace";ctx.fillText(s[1].toUpperCase(),sx+W/8,65);
+  });
+  ctx.textAlign="left";
+  ctx.strokeStyle="rgba(0,102,255,0.2)";ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,74);ctx.lineTo(W,74);ctx.stroke();
+  /* JOB CARDS */
+  var jobs=[
+    ["GG","Senior Frontend Engineer","Google · Bangalore","98%","#4D9FFF","₹45–65 LPA"],
+    ["SW","Full Stack Developer","Swiggy · Mumbai","91%","#ff9066","₹28–40 LPA"],
+    ["ZM","Backend Engineer — Python","Zepto · Hyderabad","88%","#6fda6f","₹22–35 LPA"]
+  ];
+  jobs.forEach(function(j,i){
+    var jy=82+i*46,featured=i===0;
+    rr(8,jy,W-16,40,6,featured?"rgba(0,30,80,0.85)":"rgba(0,20,55,0.6)",featured?"rgba(0,212,255,0.45)":"rgba(0,102,255,0.25)",featured?1.5:1);
+    rr(16,jy+7,24,24,4,"rgba(0,102,255,0.2)");
+    ctx.fillStyle=j[4];ctx.font="bold 6px sans-serif";ctx.textAlign="center";ctx.fillText(j[0],28,jy+22);ctx.textAlign="left";
+    ctx.fillStyle="#fff";ctx.font="bold 7.5px sans-serif";ctx.fillText(j[1],48,jy+17);
+    ctx.fillStyle="rgba(184,212,255,0.55)";ctx.font="5.5px monospace";ctx.fillText(j[2],48,jy+27);
+    ctx.fillStyle="#00e5a0";ctx.font="bold 8px monospace";ctx.textAlign="right";ctx.fillText(j[3],W-14,jy+17);
+    ctx.fillStyle="rgba(184,212,255,0.4)";ctx.font="5.5px sans-serif";ctx.fillText(j[5],W-14,jy+28);
+    ctx.textAlign="left";
+  });
+  /* AI STRIP */
+  ctx.fillStyle="rgba(0,102,255,0.1)";ctx.fillRect(0,226,W,14);
+  ctx.strokeStyle="rgba(0,102,255,0.25)";ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,226);ctx.lineTo(W,226);ctx.stroke();
+  ctx.fillStyle="#00D4FF";ctx.font="bold 5px monospace";ctx.fillText("AI FEATURES:",10,236);
+  var features=["Resume AI","ATS Scorer","Face ID Login","Job Hotspot Map","Community"];
+  features.forEach(function(t,i){
+    var tw=ctx.measureText(t).width,fx=90+i*78;
+    rr(fx,229,tw+10,7,3,"rgba(0,212,255,0.07)","rgba(0,212,255,0.25)",0.8);
+    ctx.fillStyle="rgba(184,212,255,0.7)";ctx.font="4.5px sans-serif";ctx.fillText(t,fx+5,235);
+  });
+})();
+</script>
 </html>
